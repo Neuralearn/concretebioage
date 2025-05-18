@@ -12,8 +12,7 @@ Our solution allows for biological age prediction on encrypted data, ensuring th
 *   **Leverages Concrete ML:** Seamlessly integrates Concrete ML for FHE-compatible model training, quantization, and deployment.
 *   **Comprehensive Preprocessing & Diverse Data Sources:** Implements robust preprocessing on clear data, including KNN imputation for missing values and standardization. The model is trained on a rich, combined dataset from numerous public studies utilizing Illumina 27k and 450k arrays (GEO, ArrayExpress, TCGA), ensuring exposure to diverse biological variability.
 *   **In-depth Model Evaluation & Trade-off Analysis:** Explored multiple models (Ridge Regression, XGBoost Regressor) and various bit depths (4 to 10 bits for Ridge) to analyze the accuracy vs. FHE-friendliness trade-off. Ridge Regression with 10-bit precision was selected for the final deployment, balancing high accuracy with FHE performance.
-*   **Interactive Hugging Face Demo:** A client-server application deployed as a Hugging Face Space, demonstrating the end-to-end FHE workflow with sample data.
-*   **Clear Documentation & Report:** Accompanied by a detailed report covering methodology, technical choices, performance evaluation, and trade-offs.
+*   **Interactive Hugging Face Demo:** A client-server application (https://huggingface.co/spaces/Folefac/concretebiologicalage)deployed as a Hugging Face Space, demonstrating the end-to-end FHE workflow with sample data.
 *   **Reproducible Training:** The provided Jupyter notebook details the training process for all explored models.
 
 ## Methodology
@@ -61,10 +60,11 @@ Our solution allows for biological age prediction on encrypted data, ensuring th
         *   Receives the encrypted result.
         *   Deserializes and decrypts the prediction using the private key to reveal the estimated biological age.
 *   **Hugging Face Space:**
-    *   The application (`app.py`) provides a Gradio interface for users to upload their (sample) DNA methylation data (as a CSV).
-    *   The backend (`server.py`) hosts the FHE model and performs encrypted computations.
-    *   This demonstrates the end-to-end privacy-preserving prediction pipeline.
+    *   This space (https://huggingface.co/spaces/Folefac/concretebiologicalage) demonstrates the end-to-end privacy-preserving prediction pipeline.
+## How to Train and Run Inference
 
+*   Go through this colab file (https://colab.research.google.com/drive/1q2s-Xjg0POLNNFLOueqAdB62QrbG-5GU#scrollTo=G1CMElzCT7mA). A link to the dataset is available in the File
+  
 ## How to Run the Hugging Face Demo
 
 1.  Navigate to the deployed Hugging Face Space.
@@ -83,9 +83,8 @@ Our solution allows for biological age prediction on encrypted data, ensuring th
     *   (Detailed metrics for all bit depths and models are available in the accompanying report and Jupyter Notebook.)
 *   **FHE Performance (Indicative, from development environment):**
     *   **Key Generation Time:** Less than 0.1 seconds.
-    *   **FHE Execution Time (per sample, on server):** The deployed Hugging Face Space will provide an FHE execution time for each prediction. This is dependent on the server hardware (typically CPU on HF Spaces) and the complexity of the 10-bit Ridge model. *Please refer to the live demo and the detailed report for precise timings on the target evaluation server (m6i.metal AWS).*
+    *   **FHE Execution Time (per sample, on server):** The deployed Hugging Face Space will provide an FHE execution time for each prediction. This is dependent on the server hardware (typically CPU on HF Spaces) and the complexity of the 10-bit Ridge model. We got **~ 5s** for L4 Machine on Colab
 
-A comprehensive analysis of speed vs. accuracy trade-offs for different bit precisions and models is provided in the detailed technical report.
 
 ## Key Technical Choices & Trade-offs
 
@@ -95,4 +94,3 @@ A comprehensive analysis of speed vs. accuracy trade-offs for different bit prec
 *   **Preprocessing in Cleartext:** All data imputation and scaling steps are performed on clear data before encryption. This is a common and practical approach in FHE applications, as these operations can be complex or inefficient to perform in FHE. The privacy of the raw input features is maintained as only the preprocessed, scaled data is encrypted.
 *   **Concrete ML:** This library significantly simplified the FHE implementation by abstracting away much of the low-level cryptographic complexity, allowing us to focus on the machine learning aspects and FHE trade-offs.
 
-## Repository Structure
