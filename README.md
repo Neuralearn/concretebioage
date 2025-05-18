@@ -1,22 +1,3 @@
----
-title: "FHE-BioAge: Privacy-Preserving Biological Age Estimation with Concrete ML"
-emoji: 🧬⏳🔒
-colorFrom: indigo
-colorTo: green
-sdk: gradio
-sdk_version: 4.31.0 # Or your current stable Gradio version from requirements.txt
-app_file: app.py
-pinned: true
-tags:
-  - FHE
-  - Concrete-ML
-  - Biological Age
-  - DNA Methylation
-  - Privacy-Preserving Machine Learning
-  - Healthcare
-python_version: 3.11.12 # As per your Dockerfile
----
-
 # FHE-BioAge: Privacy-Preserving Biological Age Estimation
 
 ## Overview
@@ -24,7 +5,7 @@ python_version: 3.11.12 # As per your Dockerfile
 Chronological age, the number of rotations around the sun, often differs from an individual's **biological age**—the age of their cells. Biological age, influenced by factors beyond genetics, offers a snapshot of current cellular health and is a key indicator of **healthspan**. This project implements a machine learning model for estimating biological age from DNA methylation data, with a critical focus on privacy using **Fully Homomorphic Encryption (FHE)** powered by Zama's Concrete ML.
 
 Our solution allows for biological age prediction on encrypted data, ensuring that sensitive genetic information remains confidential throughout the computation process. This approach paves the way for privacy-preserving health assessments and research.
-
+![fheagemodel](fhebioagemodel.png)
 ## Features
 
 *   **FHE-Powered Biological Age Prediction:** Core model (Ridge Regression) operates entirely on encrypted DNA methylation data, ensuring data privacy.
