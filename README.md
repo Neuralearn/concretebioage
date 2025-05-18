@@ -91,6 +91,7 @@ A comprehensive analysis of speed vs. accuracy trade-offs for different bit prec
 
 *   **Model Choice (Ridge vs. XGBoost):** While XGBoost is powerful, Ridge Regression offered a better balance of prediction accuracy and FHE-friendliness (simpler model, potentially faster FHE execution, easier quantization) for this specific dataset and task.
 *   **Bit Precision:** We systematically evaluated bit precisions from 4 to 10 bits for Ridge. Increasing bit depth generally improves model accuracy but also increases the complexity and computational cost of FHE operations (larger circuits, longer execution times, larger key sizes). The 10-bit Ridge model was chosen as it provided the best accuracy among the evaluated Ridge configurations without prohibitive FHE overhead for a demo.
+  ![fheagemodel](bitsvsaccuracy.png)
 *   **Preprocessing in Cleartext:** All data imputation and scaling steps are performed on clear data before encryption. This is a common and practical approach in FHE applications, as these operations can be complex or inefficient to perform in FHE. The privacy of the raw input features is maintained as only the preprocessed, scaled data is encrypted.
 *   **Concrete ML:** This library significantly simplified the FHE implementation by abstracting away much of the low-level cryptographic complexity, allowing us to focus on the machine learning aspects and FHE trade-offs.
 
