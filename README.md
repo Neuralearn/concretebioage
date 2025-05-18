@@ -63,7 +63,7 @@ Our solution allows for biological age prediction on encrypted data, ensuring th
     *   This space (https://huggingface.co/spaces/Folefac/concretebiologicalage) demonstrates the end-to-end privacy-preserving prediction pipeline.
 ## How to Train and Run Inference
 
-*   Go through this colab file (https://colab.research.google.com/drive/1q2s-Xjg0POLNNFLOueqAdB62QrbG-5GU#scrollTo=G1CMElzCT7mA). A link to the dataset is available in the File
+*   Go through this colab file (https://colab.research.google.com/drive/1q2s-Xjg0POLNNFLOueqAdB62QrbG-5GU). A link to the dataset is available in the File
   
 ## How to Run the Hugging Face Demo
 
@@ -83,7 +83,7 @@ Our solution allows for biological age prediction on encrypted data, ensuring th
     *   (Detailed metrics for all bit depths and models are available in the accompanying report and Jupyter Notebook.)
 *   **FHE Performance (Indicative, from development environment):**
     *   **Key Generation Time:** Less than 0.1 seconds.
-    *   **FHE Execution Time (per sample, on server):** The deployed Hugging Face Space will provide an FHE execution time for each prediction. This is dependent on the server hardware (typically CPU on HF Spaces) and the complexity of the 10-bit Ridge model. We got **~ 5s** for L4 Machine on Colab
+    *   **FHE Execution Time (per sample, on server):** The deployed Hugging Face Space will provide an FHE execution time for each prediction. This is dependent on the server hardware (typically CPU on HF Spaces) and the complexity of the 10-bit Ridge model. We got ~ 500s for 100 samples for L4 Machine on Colab
 
 
 ## Key Technical Choices & Trade-offs
