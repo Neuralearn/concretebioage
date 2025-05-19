@@ -12,7 +12,7 @@ Our solution allows for biological age prediction on encrypted data, ensuring th
 *   **Leverages Concrete ML:** Seamlessly integrates Concrete ML for FHE-compatible model training, quantization, and deployment.
 *   **Comprehensive Preprocessing & Diverse Data Sources:** Implements robust preprocessing on clear data, including KNN imputation for missing values and standardization. The model is trained on a rich, combined dataset from numerous public studies utilizing Illumina 27k and 450k arrays (GEO, ArrayExpress, TCGA), ensuring exposure to diverse biological variability.
 *   **In-depth Model Evaluation & Trade-off Analysis:** Explored multiple models (Ridge Regression, XGBoost Regressor) and various bit depths (4 to 10 bits for Ridge) to analyze the accuracy vs. FHE-friendliness trade-off. Ridge Regression with 10-bit precision was selected for the final deployment, balancing high accuracy with FHE performance.
-*   **Interactive Hugging Face Demo:** A client-server application (https://huggingface.co/spaces/Folefac/concretebiologicalage)deployed as a Hugging Face Space, demonstrating the end-to-end FHE workflow with sample data.
+*   **Interactive Hugging Face Demo:** A client-server application (https://huggingface.co/spaces/Folefac/concretebiologicalage) deployed as a Hugging Face Space, demonstrating the end-to-end FHE workflow with sample data.
 *   **Reproducible Training:** The provided Jupyter notebook details the training process for all explored models.
 
 ## Methodology
